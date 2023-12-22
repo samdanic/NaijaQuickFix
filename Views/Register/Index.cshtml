@@ -1,0 +1,61 @@
+﻿@using NaijaQuickFix.ViewModels
+@model RegisterViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    @Html.Partial("../Partials/MetaPartial")
+    <title>Register To Your Naija Quick Fix Account</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="spacer">
+        <a class="logoContainer current-page" page="home" href="./">
+            <img src="@Url.Content("~/Images/quickfixnewgreen.png")" class="green-logo" />
+        </a>
+        <div class="form-group">
+            <div class="alert alert-danger alertregister" style="display:none;margin-bottom:0">
+            </div>
+        </div>
+        <div class="underline"></div>
+        @*<div class="form-container">
+            <div class="form-group">
+                <div class="alert alert-danger alertregister" style="display:none;margin-bottom:0">
+                </div>
+            </div>*@
+    <form class="register-form" action="@Url.Action("Index","Register")" method="POST">
+        <div class="form-group">
+            <label for="password" class="control-label"></label>
+            <span style="color:red">@ViewBag.error</span>
+        </div>
+        <div class="form-view">
+            <input placeholder="Full Name" type="text" name="firstname" id="firstname" class="form-input" />
+        </div>
+        <div class="form-view">
+            <input placeholder="Email" type="email" name="email" id="email" class="form-input" />
+            <input placeholder="Password" type="password" name="password" id="password" class="form-input" />
+            <input placeholder="Confirm Password" type="password" name="password" id="cfpassword" class="form-input" />
+        </div>
+        <div class="form-view">
+            <input placeholder="NIN" type="text" name="nin" id="nin" class="form-input" />
+            <input placeholder="Phone" type="tel" name="phoneno" id="phoneno" class="form-input" />
+        </div>
+        <div class="form-view">
+
+            @*<select class="form-input" name="state" id="user_state">
+                <option>Select State</option>
+            </select>*@
+            <input placeholder="Local Government" type="text" name="lga" id="lga" class="form-input" />
+        </div>
+        @*<button class="btn-register" id="btn-register">SUBMIT</button>*@
+    </form>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/javaScript")
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @*@RenderSection("scripts", required: false)*@
+</body>
+</html>

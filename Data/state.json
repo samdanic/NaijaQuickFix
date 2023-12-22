@@ -1,0 +1,226 @@
+{
+    "states": [
+        {
+            "id": 1,
+            "name": "Abia",
+            "capital": "Umuahia",
+            "abrv": "AB"
+        },
+        {
+            "id": 2,
+            "name": "Adamawa",
+            "capital": "Yola",
+            "abrv": "AD"
+        },
+        {
+            "id": 3,
+            "name": "Akwa Ibom",
+            "capital": "Uyo",
+            "abrv": "AK"
+        },
+        {
+            "id": 4,
+            "name": "Anambra",
+            "capital": "Awka",
+            "abrv": "AN"
+        },
+        {
+            "id": 5,
+            "name": "Bauchi",
+            "capital": "Bauchi",
+            "abrv": "BA"
+        },
+        {
+            "id": 6,
+            "name": "Bayelsa",
+            "capital": "Yenagoa",
+            "abrv": "BY"
+        },
+        {
+            "id": 7,
+            "name": "Benue",
+            "capital": "Makurdi",
+            "abrv": "BE"
+        },
+        {
+            "id": 8,
+            "name": "Borno",
+            "capital": "Maiduguri",
+            "abrv": "BO"
+        },
+        {
+            "id": 9,
+            "name": "Cross River",
+            "capital": "Calabar",
+            "abrv": "CR"
+        },
+        {
+            "id": 10,
+            "name": "Delta",
+            "capital": "Asaba",
+            "abrv": "DE"
+        },
+        {
+            "id": 11,
+            "name": "Ebonyi",
+            "capital": "Abakaliki",
+            "abrv": "EB"
+        },
+        {
+            "id": 12,
+            "name": "Edo",
+            "capital": "Benin",
+            "abrv": "ED"
+        },
+        {
+            "id": 13,
+            "name": "Ekiti",
+            "capital": "Ado-Ekiti",
+            "abrv": "EK"
+        },
+        {
+            "id": 14,
+            "name": "Enugu",
+            "capital": "Enugu",
+            "abrv": "EN"
+        },
+        {
+            "id": 15,
+            "name": "FCT",
+            "capital": "Abuja",
+            "abrv": "FC"
+        },
+        {
+            "id": 16,
+            "name": "Gombe",
+            "capital": "Gombe",
+            "abrv": "GO"
+        },
+        {
+            "id": 17,
+            "name": "Imo",
+            "capital": "Owerri",
+            "abrv": "IM"
+        },
+        {
+            "id": 18,
+            "name": "Jigawa",
+            "capital": "Dutse",
+            "abrv": "JI"
+        },
+        {
+            "id": 19,
+            "name": "Kaduna",
+            "capital": "Kaduna",
+            "abrv": "KD"
+        },
+        {
+            "id": 20,
+            "name": "Kano",
+            "capital": "Kano",
+            "abrv": "KN"
+        },
+        {
+            "id": 21,
+            "name": "Katsina",
+            "capital": "Katsina",
+            "abrv": "KT"
+        },
+        {
+            "id": 22,
+            "name": "Kebbi",
+            "capital": "Birnin Kebbi",
+            "abrv": "KE"
+        },
+        {
+            "id": 23,
+            "name": "Kogi",
+            "capital": "Lokoja",
+            "abrv": "KO"
+        },
+        {
+            "id": 24,
+            "name": "Kwara",
+            "capital": "Ilorin",
+            "abrv": "KW"
+        },
+        {
+            "id": 25,
+            "name": "Lagos",
+            "capital": "Ikeja",
+            "abrv": "LA"
+        },
+        {
+            "id": 26,
+            "name": "Nasarawa",
+            "capital": "Lafia",
+            "abrv": "NA"
+        },
+        {
+            "id": 27,
+            "name": "Niger",
+            "capital": "Minna",
+            "abrv": "NI"
+        },
+        {
+            "id": 28,
+            "name": "Ogun",
+            "capital": "Abeokuta",
+            "abrv": "OG"
+        },
+        {
+            "id": 29,
+            "name": "Ondo",
+            "capital": "Akure",
+            "abrv": "ON"
+        },
+        {
+            "id": 30,
+            "name": "Osun",
+            "capital": "Osogbo",
+            "abrv": "OS"
+        },
+        {
+            "id": 31,
+            "name": "Oyo",
+            "capital": "Ibadan",
+            "abrv": "OY"
+        },
+      {
+        "id": 32,
+        "name": "Plateau",
+        "capital": "Jos",
+        "abrv": "PL"
+      },
+        {
+            "id": 33,
+            "name": "Rivers",
+            "capital": "Port Harcourt",
+            "abrv": "RI"
+        },
+        {
+            "id": 34,
+            "name": "Sokoto",
+            "capital": "Sokoto",
+            "abrv": "SO"
+        },
+        {
+            "id": 35,
+            "name": "Taraba",
+            "capital": "Jalingo",
+            "abrv": "TA"
+        },
+        {
+            "id": 36,
+            "name": "Yobe",
+            "capital": "Damaturu",
+            "abrv": "YO"
+        },
+        {
+            "id": 37,
+            "name": "Zamfara",
+            "capital": "Gusau",
+            "abrv": "ZA"
+        }
+    ]
+}

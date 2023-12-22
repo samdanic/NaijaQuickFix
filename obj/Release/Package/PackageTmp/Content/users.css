@@ -1,0 +1,248 @@
+﻿body {
+    background-color: var(--dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user_nav {
+    margin-top: 2em;
+    width: 100px;
+    display: flex;
+    width: 97%;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+}
+
+.logout {
+    margin: 0em .5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+.off {
+    width: 1.8em;
+    height: 1.8em;
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+.logout:hover, off:hover {
+    transform: scale(.9);
+}
+
+.harmburger {
+    display: flex;
+    margin: 0em .5em;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.harmburger1, .harmburger2, .harmburger3 {
+    margin-top: .15em;
+    background-color: var(--theme-color);
+    border-radius: 50px;
+    width: 40px;
+    height: 5px;
+    transition: width 800ms;
+}
+
+.harmburger2 {
+    width: 35px;
+}
+
+
+.harmburger1 {
+    width: 30px;
+}
+
+    .harmburger1.smooth {
+        width: 40px;
+    }
+
+.harmburger2.smooth {
+    width: 35px;
+}
+
+.harmburger3.smooth {
+    width: 30px;
+}
+
+.container-view {
+    /*margin-top: 2em;*/
+    width: 285px;
+    padding: 1em 0em;
+}
+
+.profile, .edit-view {
+    margin-top: 2em;
+    width: 100%;
+    padding: 1em 0em;
+}
+
+.edit_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+    .edit_icon img {
+        width: 1.5em;
+        height: 1.5em;
+        margin: .5em 0em;
+        margin-right: .5em;
+        cursor: pointer;
+    }
+
+.profile_details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile_details-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-img {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    margin-top: 2em;
+    margin-bottom: .5em;
+}
+
+.profile-name {
+    text-align: center;
+    font-size: 1.2em;
+    font-family: var(--Poppins);
+    color: var(--theme-blue);
+    font-weight: 500;
+}
+
+.profile-role {
+    text-align: center;
+    font-size: 1em;
+    font-family: var(--Poppins);
+    color: var(--muted);
+    font-weight: 400;
+}
+
+.contact-view {
+    align-self: center;
+    margin: .5em 0em;
+    padding: 0em 1.2em;
+    width: 97%;
+}
+
+.contact-details {
+    margin: .4em 0em;
+    padding: 1em 1em;
+    background-color: var(--theme-color);
+    background-image: var(--linear);
+    box-shadow: var(--box-shadow);
+    -moz-box-shadow: var(--box-shadow);
+    -webkit-box-shadow: var(--box-shadow);
+    border-radius: var(--border-3m);
+    display: flex;
+    align-items: center;
+}
+
+.cnt-img {
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: .7em;
+}
+
+.admin_email {
+    font-size: 1em;
+    font-family: var(--Poppins);
+    color: var(--white-smoke);
+}
+
+.edit-view {
+    margin-bottom: 2em;
+    background-color: var(--theme-blue);
+    border-radius: var(--border-2m);
+    box-shadow: var(--box-shadow);
+    -moz-box-shadow: var(--box-shadow);
+    -webkit-box-shadow: var(--box-shadow);
+}
+
+.edit-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: .3em 0em;
+}
+
+    .edit-form input {
+        width: 92%;
+        padding: .75em .3em;
+        border: none;
+        margin: .3em 0em;
+        font-size: .9em;
+        font-family: var(--Poppins);
+        color: var(--muted);
+    }
+
+    .edit-form button {
+        display: none;
+        padding: .5em 1em;
+        border: none;
+        margin-top: 1.05em;
+        font-size: .9em;
+        font-weight: 500;
+        font-family: var(--Poppins);
+        color: var(--theme-blue);
+        cursor: pointer;
+        transition: 1s all;
+    }
+
+.edit-admin {
+    display: none;
+}
+
+.edit-form button:hover {
+    transform: scale(.9);
+    transition: 2s all;
+}
+
+/* Media Query*/
+@media screen and (min-width: 360px) {
+    .container-view {
+        width: 340px;
+    }
+
+    .profile, .edit-view {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .container-view {
+        width: 500px;
+    }
+
+    .profile, .edit-view {
+        width: 100%;
+    }
+}

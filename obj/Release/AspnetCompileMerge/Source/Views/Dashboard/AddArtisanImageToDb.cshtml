@@ -1,0 +1,80 @@
+﻿chro
+
+@using NaijaQuickFix.Models;
+@model NaijaQuickFix.ViewModels.ImageAndArtisanViewModel
+@{
+    ViewBag.Title ="add Image";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="col-xs-12">
+    <h3 class="page-header">@ViewBag.Title</h3>
+</div>
+<form method="post" action="/Admin/AddProduct" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-md-2 control-label text-right"></label>
+        <div class="col-md-9">
+            <div class="alert alert-success alertsuccess" style="display:none;margin-bottom:0">
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label text-right"></label>
+        <div class="col-md-9">
+            <div class="alert alert-danger alerterror" style="display:none;margin-bottom:0">
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="hidden" name="Product.Id" value="@Model.Artisan.Id" />
+        <label class="col-sm-2 control-label">Name <span class="text-danger">*</span></label>
+        <div class="col-sm-9">
+            @Html.TextBoxFor(m => m.Artisan.FullName, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Job Description <span class="text-danger">*</span></label>
+        <div class="col-sm-9">
+            @Html.TextAreaFor(m => m.Artisan.JobDescription, new { @class = "form-control", rows = "5" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Phone No <span class="text-danger">*</span></label>
+        <div class="col-sm-9">
+            <input type="number" min="0" name="Phone" value="" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group form-upload-images">
+        <label class="col-sm-2 control-label">Image <span class="text-danger">*</span></label>
+        <div class="col-sm-9">
+            <div class="btn btn-grey btn-upload-image">
+                <i class="fa fa-cloud-upload"></i>&nbsp;ChoocieImage
+                <input class="form-control" type="file" name="Product.files" multiple>
+            </div>
+        </div>
+        <div class="col-sm-offset-2 col-sm-9">
+            <div class="row form-photos">
+                @foreach (Image img in Model.Artisan.Images)
+                {
+                    <div class="col-xs-3 has-bottom">
+                        <div class="image-ratio">
+                            <img src="@Url.Content("~/Images/"+img.Url)" class="img-responsive" />
+                            <button class="overlay-btn delete-photo-btn imgCurrent"
+                                    data-id="@img.Id" data-name="Product.pastfiles">
+                                <i class="fa fa-trash-o"></i>
+                            </button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label"></label>
+        <div class="col-sm-9">
+            <button id="btnAdd" type="button" class="btn btn-info">
+                <i class="fa fa-long-arrow-right"></i>&nbsp;Save
+            </button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,26 @@
+﻿footer {
+    display: flex;
+    justify-content: center;
+}
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.footer {
+    border: none;
+    border-top: 2px solid var(--theme-color);
+    padding: 1.5em 0em;
+    width: 90vw;
+}
+
+.copyright span {
+    white-space: nowrap;
+    font-family: var(--Poppins);
+    font-weight: 500;
+    font-size: 1em;
+    color: var(--muted);
+    margin: .15em 0em;
+}
+

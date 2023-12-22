@@ -1,0 +1,39 @@
+﻿
+@Styles.Render("~/Content/dashboard.css")
+@Styles.Render("~/Content/root.css")
+<div class="side-nav">
+    <div class="side-nav-item white">
+        <a class="logoContainer current-page" page="home" href="../">
+            <img src="@Url.Content("~/Images/quickfixlogowhite1.png")" class="logo" />
+        </a>
+    </div>
+    <div class="side-nav-item active-page" onclick="addActiveClass()">
+        <img src="@Url.Content("~/Images/dashboard.png")" class="nav-icon" />
+        @Html.ActionLink("Dashboard", "Index", "Dashboard")
+    </div>
+    <div class="side-nav-item">
+        <img src="@Url.Content("~/Images/user.png")" class="nav-icon" />
+        @Html.ActionLink("My Profile", "profile", "Dashboard")
+    </div>
+    <div class="side-nav-item">
+        <img src="@Url.Content("~/Images/carving.png")" class="nav-icon" />
+        @Html.ActionLink("Artisans", "allartisans", "Dashboard")
+    </div>
+    <div class="side-nav-item">
+        <img src="@Url.Content("~/Images/customer.png")" class="nav-icon" />
+        @Html.ActionLink("Users", "users", "Dashboard")
+    </div>
+    <div class="side-nav-item">
+        <img src="@Url.Content("~/Images/report.png")" class="nav-icon" />
+        @Html.ActionLink("Complaints", "complaints", "Dashboard")
+    </div>
+    <div class="side-nav-item">
+        <img src="@Url.Content("~/Images/add-user.png")" class="nav-icon" />
+        @Html.ActionLink("Add", "addartisans", "Dashboard")
+    </div>
+    <div class="side-nav-item">
+        <img src="@Url.Content("~/Images/log-out.png")" class="nav-icon" />
+        @Html.ActionLink("Log out", "Index", "Dashboard")
+    </div>
+
+</div>

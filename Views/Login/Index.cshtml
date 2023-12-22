@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    @Html.Partial("../Partials/MetaPartial")
+    <title>Login To Your Naija Quick Fix Account</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="spacer">
+        <a class="logoContainer current-page" page="home" href="./">
+            <img src="@Url.Content("~/Images/quickfixnewgreen.png")" class="green-logo" />
+        </a>
+        <div class="underline"></div>
+        <div class="form-container">
+            <form class="login-form">
+                <input placeholder="Email/Username" type="text" name="username" id="username" class="input" />
+                <div class="error-view">
+                </div>
+                <input placeholder="Password" type="password" name="password" id="password" class="input" />
+                <div class="error-view">
+                    @*<span>Error Message</span>*@
+                </div>
+                <button class="login-btn">SUBMIT</button>
+            </form>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/javaScript")
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @*@RenderSection("scripts", required: false)*@
+</body>
+</html>

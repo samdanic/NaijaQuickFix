@@ -1,0 +1,63 @@
+﻿@model NaijaQuickFix.Models.Paging.PageModel
+@if (Model.NumberOfPages > 1 && Model.CurrentPage <= Model.NumberOfPages)
+{
+    <ul class="pagination">
+        @if (Model.CurrentPage > 1)
+        {
+            <li><a href="@Model.Url@(Model.CurrentPage - 1)">&laquo;</a></li>
+        }
+        @if (Model.CurrentPage > 3)
+        {
+            <li><a href="@Model.Url@(1)">1</a></li>
+            if (Model.CurrentPage > 5)
+            {
+                <li><span class="disabled">...</span></li>
+            }
+            else
+            {
+                if (Model.CurrentPage > 4)
+                {
+                    <li><a href="@Model.Url@(2)">2</a></li>
+                }
+            }
+        }
+        @for (int i = (Model.CurrentPage - 1); i <= (Model.CurrentPage + 3); i++)
+        {
+            if ((i - 1) == Model.CurrentPage)
+            {
+                <li class="active"><span>@(i - 1)</span></li>
+            }
+            else
+            {
+                if ((i - 1) > 0 && (i - 1) <= Model.NumberOfPages)
+                {
+                    <li><a href="@Model.Url@(i-1)">@(i - 1)</a></li>
+                }
+            }
+        }
+        @if (Model.CurrentPage < (Model.NumberOfPages - 2))
+        {
+            if (Model.CurrentPage < (Model.NumberOfPages - 4))
+            {
+                <li class="disabled"><span>...</span></li>
+            }
+            else
+            {
+                if (Model.CurrentPage < (Model.NumberOfPages - 3))
+                {
+                    <li><a href="@Model.Url@(Model.NumberOfPages - 1)">@(Model.NumberOfPages - 1)</a></li>
+                }
+            }
+            <li><a href="@Model.Url@(Model.NumberOfPages)">@Model.NumberOfPages</a></li>
+        }
+        @if (Model.CurrentPage < Model.NumberOfPages)
+        {
+            <li><a href="@Model.Url@(Model.CurrentPage + 1)">&raquo;</a></li>
+        }
+    </ul>
+}
+
+
+
+
+

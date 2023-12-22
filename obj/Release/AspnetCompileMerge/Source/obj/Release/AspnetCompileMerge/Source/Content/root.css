@@ -1,0 +1,163 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Open+Sans:wght@300;400&family=Overpass:wght@100;200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+:root {
+    --theme-color: #33A175;
+    --theme-color-opacity: #2e7f58;
+    --theme-blue: #64A0E6;
+    --scroll-color: #caab57;
+    --white: #fff;
+    --white-smoke: whitesmoke;
+    --bs-gray: #98a6ad;
+    --muted: #98a6ad;
+    --hover-color: #094557;
+    --overlay-color: rgb(97, 143, 143, 0.95);
+    --border-1m: 0.1em;
+    --border-2m: 0.2em;
+    --border-3m: 0.35em;
+    --light-grey: #E0D5D5;
+    --dark-black: hsl(0, 2%, 12%);
+    --dark-overlay: rgba(31, 30, 30, 0.6);
+    --white-color: hsl(0, 0%, 94%);
+    --linear: linear-gradient(to right, #33a175, #00a69d, #00a8c1, #00a6db, #64a0e6);
+    --Arvo: 'Arvo', serif;
+    --Montserrat: 'Montserrat', sans-serif;
+    --OpenSans: 'Open Sans', sans-serif;
+    --Poppins: 'Poppins', sans-serif;
+    --Overpass: 'Overpass', sans-serif;
+    --warning: hsl(50, 100%, 58%);
+    --error: hsl(8, 100%, 69%);
+    --success: hsl(145, 100%, 63%);
+    --peach: rgba(240, 98, 146, 0.85);
+    --cornflower: rgb(100, 149, 237);
+    --cornflower-opacity: rgba(100, 149, 237, 0.5);
+    --body: #e3edf7;
+    --card-color: rgb(247, 241, 241);
+    --brown: #F45C5D;
+    --card-overlay: rgba(255, 190, 34, 0.65);
+    --image-height: calc(70vh - 50px);
+    --max-width: calc(702px - 32px);
+    --footer-width: calc(789px - 32px);
+    --box-shadow: rgba(0, 0, 0, 0.5);
+    --webkit: 3px 3px 10px -4px #000000;
+    --box-shadow: 3px 3px 10px -4px #000000;
+    /* Newly addedd */
+    --btn-black: rgb(0, 0, 0);
+    --search-shadow: 5px 5px 33px -3px rgba(0, 0, 0, 0.1);
+    --shadow: 10px 1px 3px -3px rgba(0, 0, 0, 0.1);
+    --dark: #1e1e2d;
+    --dark-blue: #27293d
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none !important;
+    /*overflow-x: hidden;*/
+    line-height: 1.5;
+    outline: none;
+}
+
+body {
+    width: 100vw;
+}
+
+.container-wrapper {
+    background-color: rgb(255, 255, 255);
+    width: 100vw;
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/*Over lay*/
+.overlay {
+    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--theme-color-opacity);
+    overflow-y: hidden;
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+    top: 0;
+    z-index: 9999;
+    height: 100vh;
+}
+
+.spinner-class {
+    width: 150px;
+    height: 150px;
+    border: 10px solid transparent;
+    border-radius: 50%;
+    position: absolute;
+    animation: rotate var(--duration) var(--timing) infinite;
+    mix-blend-mode: difference;
+    z-index: 9999;
+}
+
+.spinner-blue {
+    border-top-color: var(--theme-blue);
+    --duration: 1.2s;
+    --timing: ease-in-out;
+}
+
+.spinner-brown {
+    border-left-color: var(--dark-blue);
+    --duration: 1.5s;
+    --timing: ease-in;
+}
+
+.spinner-green {
+    border-right-color: var(--theme-color);
+    --duration: 1.8s;
+    --timing: ease-out;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* Safari */
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 1px grey;
+    border-radius: 0px;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #3b3838;
+}

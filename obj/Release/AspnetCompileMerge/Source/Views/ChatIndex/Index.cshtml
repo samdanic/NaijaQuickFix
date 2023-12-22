@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script src="Scripts/jquery.signalR-2.4.3.min.js"></script>
+    <script src="signalr/hubs"></script>
+    <script>
+        var helloHubProxy = $.connection.hello;
+
+        helloHubProxy.client.helloClient = function (str) {
+            alert(str);
+        }
+        /*var wre = $.connection.helloSignal;*/
+        $.connection.hub.start().done(function () {
+            helloHubProxy.server.helloSignalR();
+        })
+    </script>
+</body>
+</html>

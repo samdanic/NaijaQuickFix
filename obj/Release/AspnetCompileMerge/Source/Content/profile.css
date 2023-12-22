@@ -1,0 +1,142 @@
+﻿.profile, .edit-view {
+    margin-top: 2em;
+    width: 400px;
+    padding: 1em 0em;
+}
+
+.edit_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+    .edit_icon img {
+        width: 1.5em;
+        height: 1.5em;
+        margin: .5em 0em;
+        margin-right: .5em;
+        cursor: pointer;
+    }
+
+.profile_details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile_details-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-img {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    margin-top: 2em;
+    margin-bottom: .5em;
+}
+
+.profile-name {
+    text-align: center;
+    font-size: 1.2em;
+    font-family: var(--Poppins);
+    color: var(--theme-blue);
+    font-weight: 500;
+}
+.profile-role {
+    text-align: center;
+    font-size: 1em;
+    font-family: var(--Poppins);
+    color: var(--muted);
+    font-weight: 400;
+}
+
+.contact-view {
+    align-self: center;
+    margin: .5em 0em;
+    padding: 0em 1.2em;
+    width: 97%;
+}
+
+.contact-details {
+    margin: .4em 0em;
+    padding: 1em 1em;
+    background-color: var(--theme-color);
+    background-image: var(--linear);
+    box-shadow: var(--box-shadow);
+    -moz-box-shadow: var(--box-shadow);
+    -webkit-box-shadow: var(--box-shadow);
+    border-radius: var(--border-3m);
+    display: flex;
+    align-items: center;
+}
+
+.cnt-img {
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: .7em;
+}
+
+.admin_email {
+    font-size: 1em;
+    font-family: var(--Poppins);
+    color: var(--white-smoke);
+}
+
+.edit-view {
+    margin-bottom: 2em;
+    background-color: var(--theme-blue);
+    border-radius: var(--border-2m);
+    box-shadow: var(--box-shadow);
+    -moz-box-shadow: var(--box-shadow);
+    -webkit-box-shadow: var(--box-shadow);
+}
+.edit-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: .3em 0em;
+}
+    .edit-form input {
+        width: 92%;
+        padding: .75em .3em;
+        border: none;
+        margin: .3em 0em;
+        font-size: .9em;
+        font-family: var(--Poppins);
+        color: var(--muted);
+    }
+    .edit-form button {
+        display: none;
+        padding: .5em 1em;
+        border: none;
+        margin-top: 1.05em;
+        font-size: .9em;
+        font-weight: 500;
+        font-family: var(--Poppins);
+        color: var(--theme-blue);
+        cursor: pointer;
+        transition: 1s all;
+    }
+
+.edit-admin{
+    display: none;
+}
+
+.edit-form button:hover {
+    transform: scale(.9);
+    transition: 2s all;
+}
+/* Media Query*/
+@media screen and (min-width: 850px) {
+    .profile, .edit-view {
+        width: 500px;
+    }
+}

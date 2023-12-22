@@ -1,0 +1,94 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    @Html.Partial("../Partials/MetaPartial")
+    @Styles.Render("~/Content/root.css")
+    @Styles.Render("~/Content/users.css")
+    <title>User Profile Page</title>
+</head>
+<body>
+    @*@Html.Partial("../Partials/Loader")*@
+    <div class="user_nav" id="user_nav">
+        <div class="logout">
+            <img src="@Url.Content("~/Images/off.png")" class="off" />
+        </div>
+        <div class="harmburger">
+            <div class="harmburger1"></div>
+            <div class="harmburger2"></div>
+            <div class="harmburger3"></div>
+        </div>
+    </div>
+    <div class="container-view">
+        <div class="main-view">
+            <div style="display: flex; align-items: center; flex-direction: column;">
+                <div class="profile">
+                    <div class="profile_details">
+                        <div class="profile_details-view">
+                            <img src="@Url.Content("~/Images/default.png")" class="profile-img" />
+                            <p class="profile-name">User Name</p>
+                            <p class="profile-role">User</p>
+                            <div class="edit_icon">
+                                <img src="@Url.Content("~/Images/edit.png")" id="edit" />
+                            </div>
+                        </div>
+                        <div class="contact-view">
+                            <div class="contact-details">
+                                <img src="@Url.Content("~/Images/useri.png")" class="cnt-img" />
+                                <div class="email-info">
+                                    <p class="admin_email">Name</p>
+                                    <p class="admin_email">Firstname Lastname</p>
+                                </div>
+                            </div>
+                            <div class="contact-details">
+                                <img src="@Url.Content("~/Images/email.png")" class="cnt-img" />
+                                <div class="email-info">
+                                    <p class="admin_email">Email</p>
+                                    <p class="admin_email">user@email.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-details">
+                                <img src="@Url.Content("~/Images/phone.png")" class="cnt-img" />
+                                <div class="email-info">
+                                    <p class="admin_email">Mobile</p>
+                                    <p class="admin_email">0912345678</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edit-view">
+                    <form class="edit-form" method="post">
+                        <input type="hidden" name="" />
+                        <input placeholder="First Name" readonly id="firstname" name="Email" value="First Name" />
+                        <input placeholder="Last Name" readonly id="lastname" name="Email" value="Last Name" />
+                        <input placeholder="Phone No" readonly id="mobile" name="Phone" value="0912345678" />
+                        <input placeholder="Email" readonly id="email" name="Email" value="user@gmail.com" />
+                        <input type="password" placeholder="Password" readonly value="12345678" name="Password" id="password" />
+                        <input type="password" placeholder="ConfirmPassword" readonly value="" name="ConfirmPassword" id="ConfirmPassword" />
+                        <div id="edit-admin">
+                            <button type="submit" class="update-admin">UPDATE</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/userprofile.js")
+    <script>
+        $(document).ready(async () => {
+            setTimeout(() => {
+                $('.overlay').fadeOut('slow')
+            }, 3000)
+        });
+    </script>
+</body>
+</html>

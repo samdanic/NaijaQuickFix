@@ -1,0 +1,44 @@
+﻿@Styles.Render("~/Content/search-result.css")
+@using NaijaQuickFix.Models
+@model IEnumerable<Artisan>
+
+@if (Model.Count() > 0)
+{
+
+    foreach (Artisan art in Model.Where(pro=>pro.Status==(int)NaijaQuickFix.Helper.Helper.Entity_Status.Public))
+    {
+        <div class="step search-container">
+            <div class="work-image">
+                <img src="Images/@Url.Content(art.Images.Count >0 ? art.Images.First().Url: @Url.Content("~/Images/b2.jpg"))" class="work-description-image" alt="work-description-image" />
+            </div>
+            <div class="artisan-name">
+                @*<img class="img-responsive" src="~/Images/@Url.Content(art.ArtisanProfilePhotoUrl)" style="float: left; width: 50px; margin-right: 10px;">*@
+                <div class="full-details">
+                    <span>@art.FullName</span>
+                    <span style="font-weight: 400; color:magenta var(--muted)">@art.Phone</span>
+                </div>
+            </div>
+            <h2 class="job-description">@art.JobDescription</h2>
+            <div class="price-details">
+                <h6>STARTING AT</h6>
+                <h5>&nbsp;&#8358;@String.Format("{0:n}", 1000)</h5>
+            </div>
+        </div>
+
+    }
+}
+else
+{
+    <div class="step search-container">
+        <p class="data-found">No Data Found</p>
+    </div>
+}
+
+<style>
+    .data-found{
+        font-family: var(--Poppins);
+        font-size: 1.2em;
+        font-weight: 500;
+        color: var(--theme-color);
+    }
+</style>

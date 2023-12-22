@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    @Html.Partial("../Partials/MetaPartial")
+    <title>Profile Page</title>
+</head>
+<body>
+    @Html.Partial("../Partials/HeaderPartial")
+    @Html.Partial("../Partials/Loader")
+    <div>
+        <h3>Profile Page</h3>
+    </div>
+    @Html.Partial("../Partials/Footer")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/header.js")
+</body>
+</html>

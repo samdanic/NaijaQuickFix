@@ -1,0 +1,240 @@
+﻿body {
+    background-color: var(--dark);
+}
+
+/*.admin-dashboard {
+    display: flex;
+}*/
+
+.center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: .9em 0em;
+    margin-bottom: 3em;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.logoContainer img {
+    height: 50px !important;
+    width: auto !important;
+    display: flex;
+    justify-self: center;
+}
+
+.harmburger {
+    cursor: pointer;
+    transition: all .8s;
+    margin-right: 1em;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: .4em 0em;
+}
+
+.harmburger1, .harmburger2, .harmburger3 {
+    width: 1.9em;
+    height: .3em;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--theme-color);
+    margin: .2em 0em;
+    transition: all .8s;
+}
+
+.harmburger2 {
+    width: 2.1em;
+}
+
+.harmburger3 {
+    width: 2.5em;
+}
+
+    .harmburger3.smooth {
+        width: 1.9em;
+    }
+
+.harmburger2.smooth {
+    width: 2.1em;
+}
+
+.harmburger1.smooth {
+    width: 2.5em;
+}
+
+/* Side Navigation styling*/
+.side-nav {
+    top: 0;
+    /*margin: 1em .5em;*/
+    background-color: var(--theme-color);
+    padding: 0em;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    z-index: 999;
+    width: 0px;
+    position: fixed;
+    overflow-x: hidden;
+    /*border-radius: 5px;*/
+}
+
+    .side-nav.active {
+        display: flex;
+        width: 220px;
+        transition: width .8s;
+    }
+
+.side-nav-item {
+    cursor: pointer;
+}
+
+.active-page {
+    background-color: var(--theme-color-opacity);
+}
+.active .side-nav-item {
+    display: flex;
+    align-items: center;
+    margin: .6em 0em;
+    border-radius: 20px;
+    padding: .7em;
+    cursor: pointer;
+    width: 70%;
+    transition: width .8s;
+}
+
+.active .white {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px;
+    border-bottom: 2px solid var(--white-smoke);
+}
+
+.active .side-nav-item img {
+    width: 20px;
+    height: 20px;
+    margin-left: .5em;
+}
+
+.active .side-nav-item a {
+    text-transform: uppercase;
+    font-family: var(--Montserrat);
+    color: var(--white-smoke);
+    font-weight: 300;
+    font-size: .7em;
+    padding: 0em 1em;
+    padding-left: 1.1em;
+    text-align: center;
+}
+
+/*ENd*/
+
+.main-view {
+    width: 92%;
+    margin: .8em;
+    padding: .7em;
+}
+
+    .main-view.shift {
+        margin-left: 230px;
+    }
+
+
+
+.main-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(10em,1fr));
+    grid-gap: .7em;
+}
+
+
+.users, .artisans, .registered {
+    background-color: var(--dark-blue);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 1em 1.5em;
+}
+
+.user-details, .month-details {
+    color: var(--white-smoke);
+    font-family: var(--Montserrat);
+    padding: .2em 0em;
+    font-size: 1.05em;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+@media screen and (min-width: 1090px) {
+    .admin-dashboard {
+        position: relative;
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .harmburger {
+        display: none;
+    }
+
+    .side-nav {
+        background-color: var(--theme-color);
+        margin: 0em .5em;
+        padding: 0em;
+        padding-top: 1em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        width: 250px;
+        border-radius: 5px;
+    }
+
+    .side-nav-item {
+        display: flex;
+        align-items: center;
+        margin: .6em 0em;
+        border-radius: 20px;
+        padding: .7em;
+        cursor: pointer;
+        width: 80%;
+    }
+
+    .white {
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0px;
+        border-bottom: 2px solid var(--white-smoke);
+    }
+
+    .side-nav-item img {
+        width: 20px;
+        height: 20px;
+        margin-left: .5em;
+    }
+
+    .side-nav-item a {
+        text-transform: uppercase;
+        font-family: var(--Montserrat);
+        color: var(--white-smoke);
+        font-weight: 300;
+        font-size: .7em;
+        padding: 0em 1em;
+        padding-left: 1.1em;
+        text-align: center;
+    }
+
+    .main-view {
+        margin-left: 260px;
+        /*    display: flex;
+        justify-content: center;*/
+    }
+}

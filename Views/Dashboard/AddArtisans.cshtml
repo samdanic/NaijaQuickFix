@@ -1,0 +1,110 @@
+﻿
+@using NaijaQuickFix.ViewModels
+@model RegisterArtisanViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    @Html.Partial("../Partials/MetaPartial")
+    @Styles.Render("~/Content/addartisans.css")
+    <title>Add Artisans | An Online Platform For Connecting All Nigerians To various Artisans</title>
+</head>
+<body>
+    @Html.Partial("../Partials/DashboardPartial")
+    <div class="admin-dashboard">
+        @Html.Partial("../Partials/DashboardNavPartial")
+        <div class="main-view">
+            <form id="loginForm" class="add-artisan" method="POST" novalidate="novalidate" enctype="multipart/form-data">
+                <div>
+                    <label for="password" class="control-label"></label>
+                    <span style="color:red">@ViewBag.error</span>
+                </div>
+                @Html.ValidationSummary(true, "Please fix the following errors")
+                <div class="input-views">
+                    @Html.DropDownListFor(m => m.Artisan.ProfessionId, new SelectList(Model.Professions, "Id", "Name"), "Select Profession", new { @class = "inp" })
+                    @Html.ValidationMessageFor(m => m.Artisan.Profession)
+                </div>
+                <div class="company-details">
+                    <p>ASSOCIATION DETAILS</p>
+                    @*@Html.DropDownListFor(m => m.Artisan.AssociationId, new SelectList(Model.Associations, "Id", "Name"), "Select Association", new { @class = "inp" })
+                        @Html.ValidationMessageFor(m => m.Artisan.Association)*@
+                </div>
+                <div class="input-views">
+                    @Html.DropDownListFor(m => m.Artisan.AssociationId, new SelectList(Model.Associations, "Id", "Name"), "Select Association", new { @class = "inp" })
+                    @Html.ValidationMessageFor(m => m.Artisan.Association)
+                    <input placeholder="Company Name" type="text" class="inp" id="company_name" name="CompanyName" />
+                    @Html.ValidationMessageFor(m => m.CompanyName)
+                </div>
+                <div class="input-views">
+                    <textarea placeholder="Office Address *" required id="address" type="text" name="OfficeAddress" class="inp" rows="2" cols="10"></textarea>
+                    @Html.ValidationMessageFor(m => m.OfficeAddress)
+                </div>
+                <div class="input-views" id="location">
+                    <input placeholder="Local Govt" required type="text" class="lga" id="lga" name="LGA" />
+                    @Html.ValidationMessageFor(m => m.LGA)
+                    <select class="lga" name="State" id="artisan-state">
+                        <option>Select State</option>
+                    </select>
+                    @Html.ValidationMessageFor(m => m.State)
+                </div>
+                <div class="input-views" id="location">
+                    <input placeholder="Phone Number" required type="tel" class="lga" id="mobile" name="PhoneNo" />
+                    @Html.ValidationMessageFor(m => m.PhoneNo)
+                    <input placeholder="Email" required type="email" class="state" name="Email" id="email" />
+                    @Html.ValidationMessageFor(m => m.Email)
+                </div>
+                <div class="company-details">
+                    <p>PERSONAL DETAILS</p>
+                </div>
+                <div class="input-views" id="location">
+                    <input placeholder="Full Name" required type="text" class="lga" id="first_name" name="FullName" />
+                    @Html.ValidationMessageFor(m => m.FullName)
+
+                </div>
+                <div class="input-views" id="location">
+
+                    <input placeholder="Date of Birth" required type="date" class="lga" id="date_birth" name="BirthDate" />
+                    @Html.ValidationMessageFor(m => m.BirthDate)
+                </div>
+                <div class="input-views">
+                    <textarea placeholder="House Address *" name="HouseAddress" required id="house_address" type="text" class="inp" rows="2" cols="10"></textarea>
+                    @Html.ValidationMessageFor(m => m.HouseAddress)
+                </div>
+                <div class="input-views" id="location">
+                    @Html.DropDownListFor(m => m.Artisan.GenderId, new SelectList(Model.Gender, "Id", "Name"), "Select Gender", new { @class = "lga" })
+                    <input placeholder="Next of Kin number" required type="tel" class="lga" name="NextOfKin" />
+                    @Html.ValidationMessageFor(m => m.NextOfKin)
+                </div>
+              
+                <div class="input-views">
+                    <input placeholder="NIN Number" type="text" class="inp" name="Nin" max="11" />
+                    @Html.ValidationMessageFor(m => m.Nin)
+                </div>
+                <div class="input-views" id="location">
+                    @*<input placeholder="Job description" required type="text" class="lga" name="JobDescription" />*@
+
+                    <textarea placeholder="Job description" name="JobDescription" required id="house_address" type="text" class="inp" rows="2" cols="10"></textarea>
+                    @Html.ValidationMessageFor(m => m.JobDescription)
+                </div>
+                <div class="input-views1">
+                    <button class="">Submit</button>
+                </div>
+                @Html.AntiForgeryToken()
+            </form>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/dashboard.js")
+    @Scripts.Render("~/Scripts/addartisan.js")
+
+
+    @section scripts{
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+</body>
+</html>

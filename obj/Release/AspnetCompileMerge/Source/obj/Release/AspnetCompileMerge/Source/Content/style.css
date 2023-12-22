@@ -1,0 +1,281 @@
+﻿/* 
+Custom Styles that user can edit to customize form
+Set custom font-size or font-weight, color or any styling property
+ */
+ .login-box{
+ background:#e1e1e1;
+ border-radius:4px;
+ padding-top:10px;
+ padding-bottom:10px;
+ }
+ 
+/*Style the Title in generated button.*/
+.sym-form-name{
+font-weight:bold;
+font-size:2em;
+text-align:center;
+margin-bottom:10px;
+}
+
+/*Style the Price field in generated button.*/
+.sym-form-price{
+padding-top:7px;
+font-weight:bold;
+font-size:1.5em;
+}
+
+/*Style the label for Price field in generated button.
+You can use display:none; if you want to hide it*/
+.sym-form-price label{
+padding-top:0px !important;
+}
+
+/*Style the Options field in generated button.*/
+.sym-form-options{
+
+}
+
+/*Style the label for Options field in generated button.
+You can use display:none; if you want to hide it*/
+.sym-form-price label{
+padding-top:0px !important;
+}
+/* Styles for Large POP-UP box */
+#SymModalTitle{
+font-size:3em;
+}
+#SymModalBody{
+
+}
+/* Styles for Small POP-UP box */
+#SymAlertModalTitle{
+font-size:1.5em;
+}
+#SymAlertModalBody{
+text-align:center;
+}
+
+/* Styles for Product lightbox description Paragraph*/
+.sym-product-lb-desc{
+margin-top:10px;
+text-align:justify;
+}
+/* Styles for Product lightbox form*/
+.sym-product-lb-form{
+margin-top:10px;
+padding:50px;
+border:2px dashed #b6b6b6;
+background:#fcf8e3;
+}
+
+/* Styles for Product lightbox alert box*/
+#sym-product-lb-alert{
+margin-top:10px;
+display:none;
+}
+/* Styles for Cart lightbox alert box*/
+#sym-cart-lb-alert{
+
+}
+
+/*Style the Title in lightbox button.*/
+.sym-product-lb-form .sym-form-name{
+font-weight:bold;
+font-size:2em;
+text-align:center;
+margin-bottom:10px;
+}
+
+/*Style the Price field in lightbox button.*/
+.sym-product-lb-form .sym-form-price{
+padding-top:7px;
+font-weight:bold;
+font-size:1.5em;
+}
+
+/*Style the label for Price field in lightboxd button.
+You can use display:none; if you want to hide it*/
+.sym-product-lb-form .sym-form-price label{
+padding-top:0px !important;
+}
+
+/*Style the Options field inlightbox button.*/
+.sym-product-lb-form .sym-form-options{
+
+}
+
+@media (min-width: 992px){
+/* Styles for Product lightbox form*/
+.sym-product-lb-form{
+margin: 0 10px;
+}
+/* Styles for Product lightbox description Paragraph*/
+.sym-product-lb-desc{
+padding:10px;
+}
+#sym-product-lb-alert{
+margin: 0 10px 10px 10px;
+}
+}
+
+/* don't edit below this */
+.sym-media-img{
+margin-right:10px;
+}
+.zoom-in{
+    cursor:zoom-in;
+}
+.sym-loading{
+background: url(img/ajax-loader-small.gif) no-repeat center center #fff !important;
+min-height:100px;
+}
+.blueimp-gallery .modal-body{
+ padding:0 !important;
+}
+.blueimp-gallery .modal-body img{
+max-width: 100%;
+height: auto;
+}
+.blueimp-gallery >.slides > .slide >.slide-content{
+overflow:auto;
+}
+
+#sym-pro-images{
+text-align:center;
+}
+#sym-pro-images a img{
+margin:10px;
+}
+.sym-shopping-cart-box{
+font-size:2em;
+width:100%;
+text-align:center;
+margin:50px auto;
+}
+.sym-shopping-cart-box i{
+font-size:2em;
+}
+.sym-hide{
+display:none;
+}
+.sym-count{
+max-width:300px;
+}
+.sym-cart-table{
+border:1px solid #ddd;
+}
+.sym-cart-table thead{
+background:#f1f1f1;
+}
+
+.sym-cart-table  td {
+vertical-align:middle !important;
+}
+.sym-cart-info-table {
+width:100%;
+}
+.sym-cart-info-table td:first-child{
+white-space:nowrap;
+min-width:40%;
+}
+.sym-cart-info-table td:nth-child(2){
+white-space:nowrap;
+width:58%;
+padding-left:2%;
+}
+#sym-cart-lb-coupon {
+margin-top:20px;
+}
+.sym-cart-coupons-table > tbody > tr > td {
+border-top:none;
+}
+/* Small devices */
+@media (min-width: 768px) and (max-width: 992px){
+.sym-cart-table  tr td:nth-child(2) img{
+min-width:40px;
+width:40px;
+height:auto;
+}
+.sym-cart-table  tbody > tr > td:first-child, .sym-cart-table thead tr th:first-child ,.sym-cart-table  tfoot > tr > td:first-child{
+display:none;
+}
+.sym-count{
+width:100px;
+}
+}
+
+/* Extra Small devices */
+@media (max-width: 768px){
+.sym-cart-table tr{
+border-bottom:2px solid #ddd; 
+}
+.sym-cart-table tr:nth-child(2n+1){
+background:#f5f5f5;
+}
+.sym-cart-table > tbody > tr > td:first-child{
+display:none;
+}
+.sym-cart-table > tbody > tr > td:nth-child(2){
+display:none;
+}
+.sym-cart-table  thead{
+display:none;
+}
+.sym-cart-table tbody > tr > td{
+position:relative;
+width:100%;
+padding-left:43% !important;
+padding-right:2% !important;
+display:block;
+}
+.sym-cart-table tbody > tr > td:before{
+white-space:nowrap;
+position:absolute;
+width:39%;
+left:2%;
+font-weight:bold;
+content:attr(data-title);
+border-top:none;
+}
+.sym-cart-table tfoot > tr > td{
+display:none;
+}
+.sym-cart-table tfoot > tr > td:last-child{
+width:100%;
+display:block;
+border-top:none;
+}
+.sym-cart-coupons-table > tbody > tr > td{
+position:relative;
+width:100%;
+display:block;
+}
+
+.sym-cart-info-table {
+width:100%;
+background:#f5f5f5;
+}
+.sym-cart-info-table tr{
+border:none;
+}
+.sym-cart-info-table td:first-child{
+white-space:nowrap;
+width:40%;
+padding-left:2% !important;
+display:inline-block;
+}
+.sym-cart-info-table td:nth-child(2){
+white-space:nowrap;
+width:56%;
+padding-left:2% !important;
+display:inline-block;
+}
+.sym-count{
+max-width:100%;
+}
+}
+
+.page-header {
+    border-bottom:none;
+    margin-top:30px;
+}

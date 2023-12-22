@@ -1,0 +1,79 @@
+﻿body> div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 0em;
+}
+
+.artisans-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--theme-color);
+    /*padding: .7em 0em;*/
+    width: 90vw;
+    border-radius: .3em;
+}
+ .form-group {
+        width: 90vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .form-group > div {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-group label {
+        font-size: 1em;
+        color: var(--white-smoke);
+        text-align: left;
+        width: 90%;
+        font-family: var(--Poppins);
+        padding: .5em 0em;
+    }
+
+    .form-group input, .form-group textarea, .form-control {
+        padding: .8em .7em;
+        align-self: flex-start;
+        font-size: .8em;
+        width: 100%;
+        border: none;
+        font-family: var(--Poppins)
+    }
+    .form-group button {
+        padding: .4em 3.3em;
+        font-size: 1.1em;
+        margin-bottom: 2em;
+        width: 100%;
+        border: none;
+        cursor: pointer;
+        color: var(--theme-color);
+        font-family: var(--Poppins)
+    }
+
+
+.btn-upload-image {
+    width: 100%;
+}
+.fa-cloud-upload {
+    font-size: 1em;
+    color: var(--white-smoke) !important;
+}
+
+
+@media screen and (min-width: 700px) {
+    .artisans-details {
+        width: 650px;
+    }
+
+    .form-group {
+        width: 600px;
+    }
+}

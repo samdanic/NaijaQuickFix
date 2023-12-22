@@ -1,0 +1,38 @@
+﻿@Styles.Render("~/Content/css")
+@Styles.Render("~/Content/root.css")
+
+@if (NaijaQuickFix.Security.SimpleSessionPersister.IsAuthenticated)
+{
+    if (NaijaQuickFix.Security.SimpleSessionPersister.IsUser)
+    {
+
+        <a href="@Url.Action("Logout", "Home")"><i class="fa fa-sign-out fa-fw"></i>&nbsp;.Logout</a>
+    }
+    else
+    {
+
+
+    }
+}
+else
+{
+
+    <div class="register-area">
+        <div class="register-view">
+            <img src="@Url.Content("~/Images/enter.png")" alt="register" class="user-click" />
+            @Html.ActionLink("Login", "Login", "Home")
+        </div>
+        <div class="register-view">
+            <img src="@Url.Content("~/Images/edit.png")" alt="register" class="user-click" />
+            @Html.ActionLink("Register As A New User", "Register", "Home")
+        </div>
+        <div class="register-view" id="register">
+            <img src="@Url.Content("~/Images/edit.png")" alt="register" class="user-click" />
+            <a id="register">Register As An Artisan</a>
+        </div>
+    </div>
+
+
+}
+
+

@@ -1,0 +1,116 @@
+﻿@using NaijaQuickFix.ViewModels
+@model RegisterViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    @Html.Partial("../Partials/MetaPartial")
+    <title>Register Your Naija Quick Fix Account</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="spacer">
+        <a class="logoContainer current-page" page="home" href="../">
+            <img src="@Url.Content("~/Images/quickfixnewgreen.png")" class="green-logo" />
+        </a>
+        <div class="underline"></div>
+        <div style="display: flex; justify-content: center;">
+            <div class="register-form">
+                <div class="form-group">
+                    <div class="alert alert-danger alertregister" style="display:none;margin-bottom:0">
+                        gdfghfghg
+                    </div>
+                </div>
+                <form id="registerForm" method="POST" novalidate="novalidate">
+                    <div class="input-view" id="location">
+                        <div class="input-div" style="width: 100%;">
+                            <input placeholder="First Name" required type="text" class="lga" name="FirstName" id="firstname" value="@Model.FirstName" onfocus="focusText(this)" onkeydown="checkTextInput(this)"/>
+                            <span class="error firstname"></span>
+                            @*@Html.ValidationMessageFor(m => m.FirstName)*@
+                        </div>
+                        <div class="input-div" style="width: 100%;">
+                            <input placeholder="Last Name" required type="text" class="lga" id="lastname" name="LastName" value="@Model.LastName" onfocus="focusText(this)" onkeydown="checkTextInput(this)" />
+                            <span class="error lastname"></span>
+                            @*@Html.ValidationMessageFor(m => m.LastName)*@
+                        </div>
+                    </div>
+                    <div class="input-view" id="location">
+                        <div class="input-div" style="width: 100%;">
+                            <input placeholder="Email" required type="email" class="lga" id="email" name="Email" value="@Model.Email" onfocus="focusText(this)" onkeydown="checkTextInput(this)" />
+                            <span class="error email"></span>
+                            @*@Html.ValidationMessageFor(m => m.Email)*@
+                        </div>
+                        <div class="input-div" style="width: 100%;">
+                            <input placeholder="Password" required type="password" class="lga" name="Password" id="password" value="@Model.Password" onfocus="focusText(this)" onkeydown="checkTextInput(this)" />
+                            <span class="error password"></span>
+                            @*@Html.ValidationMessageFor(m => m.Password)*@
+                        </div>
+                        <div class="input-div" style="width: 100%;">
+                            <input placeholder="Confirm Password" required type="password" class="lga" value="@Model.ConfirmPassword" name="ConfirmPassword" id="confirmpassword" onfocus="focusText(this)" onkeydown="checkTextInput(this)" />
+                            <span class="error confirmpassword"></span>
+                            @*@Html.ValidationMessageFor(m => m.ConfirmPassword)*@
+                        </div>
+                    </div>
+                    <div class="input-view" id="location">
+                        <div class="input-div" style="width: 100%;">
+                            <select class="lga" name="LGA" id="lga" style="width: 100%;" placeholder="Local Govt">
+                                <option>Select Local Government</option>
+                            </select>
+                            <span class="error lga"></span>
+                            @*@Html.ValidationMessageFor(m => m.LGA)*@
+                        </div>
+                        <div class="input-div" style="width: 100%;">
+                            <select class="lga" name="State" id="user_state" style="width: 100%;">
+                                <option>Select State</option>
+                            </select>
+                            <span class="error user_state"></span>
+                            @*@Html.ValidationMessageFor(m => m.State)*@
+                        </div>
+                    </div>
+                    <div class="input-view" id="location">
+                        <di`v class="input-div" style="width: 100%;">
+                            <input placeholder="Phone Number" required type="tel" class="lga" id="mobile" name="PhoneNo" value="@Model.PhoneNo" onfocus="focusText(this)" onkeydown="checkNumberInput(this)" />
+                            <span class="error mobile"></span>
+                            @*@Html.ValidationMessageFor(m => m.PhoneNo)*@
+                        </di`v>
+                        <div class="input-div" style="width: 100%;">
+                            <input placeholder="NIN Number" required type="text" class="lga" id="nin" name="Nin" value="@Model.Nin" onfocus="focusText(this)" onkeydown="checkNumberInput(this)" />
+                            <span class="error nin"></span>
+                            @*@Html.ValidationMessageFor(m => m.Nin)*@
+                        </div>
+                    </div>
+                    <div class="input-view" id="location">
+                        <div class="input-div" style="width: 100%;">
+                            <select class="gender" name="Gender" id="user_gender" style="width: 100%;" onfocus="focusText(this)" onkeydown="checkTextInput(this)">
+                                <option>Select Gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+
+                            </select>
+                            <span class="error user_gender"></span>
+                            @*@Html.ValidationMessageFor(m => m.Gender)*@
+                        </div>
+                        <div class="input-div" style="width: 100%;">
+                            <input placeholder="Date of Birth" required type="date" class="lga" id="date_birth" name="DOB" value="@Model.DOB" onfocus="focusText(this)" onkeydown="checkTextInput(this)" />
+                            <span class="error date_birth"></span>
+                            @*@Html.ValidationMessageFor(m => m.DOB)*@
+                        </div>
+                    </div>
+                    <div class="input-view" id="register-btn-view">
+                        <button class="register-btn">SUBMIT</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/register.js")
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @*@RenderSection("scripts", required: false)*@
+</body>
+</html>

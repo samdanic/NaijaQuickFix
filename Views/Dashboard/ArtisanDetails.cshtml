@@ -1,0 +1,144 @@
+﻿@using NaijaQuickFix.Models;
+@model NaijaQuickFix.ViewModels.ImageAndArtisanViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    @Html.Partial("../Partials/MetaPartial")
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" defer>
+    <title>Artisan Details</title>
+    @Styles.Render("~/Content/artisansdetails.css")
+</head>
+<body>
+    @Html.Partial("../Partials/DashboardNavPartial")
+    @Html.Partial("../Partials/DashboardPartial")
+    <div>
+        <form method="post" action="/Dashboard/GetAA" class="form-horizontal artisans-details">
+            <div class="form-group">
+                <label class="col-md-2 control-label text-right"></label>
+                <div class="col-md-9">
+                    <div class="alert alert-success alertsuccess" style="display:none;margin-bottom:0">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label text-right"></label>
+                <div class="col-md-9">
+                    <div class="alert alert-danger alerterror" style="display:none;margin-bottom:0">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="hidden" name="Artisan.Id" value="@Model.Artisan.Id" />
+                <label class="col-sm-2 control-label">Name *</label>
+                <div>
+                    @Html.TextBoxFor(m => m.Artisan.FullName, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Job Description <span class="text-danger">*</span></label>
+                <div>
+                    @Html.TextAreaFor(m => m.Artisan.JobDescription, new { @class = "form-control", rows = "5" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Phone No <span class="text-danger">*</span></label>
+                <div>
+                    <input type="number" min="0" name="Artisan.Phone" value="@Model.Artisan.Phone" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Company Name <span class="text-danger">*</span></label>
+                <div>
+                    <input type="text" name="Artisan.CompanyName" value="@Model.Artisan.CompanyName" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">House Address <span class="text-danger">*</span></label>
+                <div>
+                    <input type="text" name="Artisan.HouseAddress" value="@Model.Artisan.HouseAddress" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">LGA <span class="text-danger">*</span></label>
+                <div>
+                    <input type="text" name="Artisan.LGA" value="@Model.Artisan.LGA" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">LGA <span class="text-danger">*</span></label>
+                <div>
+                    <input type="text" name="Artisan.LGA" value="@Model.Artisan.LGA" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Email <span class="text-danger">*</span></label>
+                <div>
+                    <input type="text" name="Artisan.Email" value="@Model.Artisan.Email" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Next Of Kin Phone No. <span class="text-danger">*</span></label>
+                <div>
+                    <input type="text" name="Artisan.NextOfKinPhoneNo" value="@Model.Artisan.NextOfKinPhoneNo" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">NIN <span class="text-danger">*</span></label>
+                <div>
+                    <input type="text" name="Artisan.NIN" value="@Model.Artisan.NIN" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Next Of Kin Phone No. <span class="text-danger">*</span></label>
+                <div>
+                    <input type="text" name="Artisan.State" value="@Model.Artisan.State" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group form-upload-images">
+                <label class="col-sm-2 control-label">Image <span class="text-danger">*</span></label>
+                <div>
+                    <div class="btn btn-grey btn-upload-image">
+                        @*<i class="fa fa-cloud-upload"></i>&nbsp;Choose Image*@
+                        <input class="form-control" type="file" name="Artisan.files" multiple>
+                    </div>
+                </div>
+                <div class="col-sm-offset-2 col-sm-9">
+                    <div class="row form-photos">
+                        @foreach (Image img in Model.Artisan.Images)
+                        {
+                            <div class="col-xs-3 has-bottom">
+                                <div class="image-ratio">
+                                    <img src="@Url.Content("~/Images/"+img.Url)" style="width:15.52em; height:12.5em;" class="img-responsive" />
+                                    <button class="overlay-btn delete-photo-btn imgCurrent"
+                                            data-id="@img.Id" data-name="Product.pastfiles">
+                                        <i class="fa fa-trash-o"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"></label>
+                <div class="col-sm-9">
+                    <button id="btnAdd" type="button" class="btn btn-info">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/Global/form.js")
+        @Scripts.Render("~/Scripts/dashboard.js")
+</body>
+</html>

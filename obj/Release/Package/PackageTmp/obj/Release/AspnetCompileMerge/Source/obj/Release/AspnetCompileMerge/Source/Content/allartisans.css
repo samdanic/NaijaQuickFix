@@ -1,0 +1,15 @@
+﻿.artisans-table{
+    margin-top: 2em;
+}
+
+td button{
+    padding: .5em 2em;
+    border: none;
+    color: var(--theme-color);
+    cursor: pointer;
+    transition: 0.5s;
+}
+td button:hover {
+    transform: scale(.85);
+    transition: 1s;
+}

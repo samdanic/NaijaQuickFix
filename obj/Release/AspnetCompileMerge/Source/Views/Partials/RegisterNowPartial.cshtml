@@ -1,0 +1,18 @@
+﻿@*@Styles.Render("~/Content/css")
+@Styles.Render("~/Content/root.css")
+<div class="register-area">
+    <div class="register-view">
+        <img src="@Url.Content("~/Images/enter.png")" alt="register" class="user-click" />
+        @Html.ActionLink("Login", "Index", "Login")
+    </div>
+    <div class="register-view">
+        <img src="@Url.Content("~/Images/edit.png")" alt="register" class="user-click" />
+        @Html.ActionLink("Register As A New User", "Index", "Register")
+    </div>
+    <div class="register-view" id="register">
+        <img src="@Url.Content("~/Images/edit.png")" alt="register" class="user-click"/>
+        @Html.ActionLink("Register As An Artisan", "Index", "Home")
+
+    </div>
+</div>*@
+

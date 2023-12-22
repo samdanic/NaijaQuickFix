@@ -1,0 +1,112 @@
+﻿.green-logo {
+    margin: .7em 0em;
+    width: 10em;
+}
+.underline {
+    background-color: var(--brown);
+    width: 100vw;
+    height: .1em;
+}
+.form-container {
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100vw;
+    height: calc(100vh - 7em);
+}
+
+.login-form {
+    background-color: var(--theme-color);
+    width: 80%;
+    padding: 60px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.3s;
+    border-radius: var(--border-2m);
+}
+
+.input-div {
+    width: 85%;
+}
+
+.input-div input {
+    outline: none;
+    border: none !important;
+    width: 100%;
+    padding: 12px 10px !important;
+    margin-bottom: 5px;
+    font-family: var(--Poppins);
+    font-weight: 500;
+}
+
+    .input-div select option {
+        outline: none;
+        border: none !important;
+        width: 100%;
+        padding: 12px 10px !important;
+        margin-bottom: 5px;
+        font-family: var(--Poppins);
+        font-weight: 500;
+    }
+
+    .input-div #username {
+        margin-top: 0px;
+    }
+    .input-div label {
+        color: white;
+    }
+
+.field-validation-error{
+    color: red;
+}
+
+.error-view {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 77.5%;
+}
+.error-view span {
+    font-family: var(--Montserrat);
+    font-size: .8em;
+    color: var(--brown);
+}
+
+.login-btn {
+    background-color: var(--white-smoke);
+    border: none;
+    padding: .5em 2.2em;
+    color: var(--theme-color);
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: var(--Poppins);
+    font-size: .9em;
+    font-weight: 500;
+    border-radius: var(--border-1m);
+}
+
+/* Media Query */
+
+@media screen and (min-width: 920px) {
+    .login-form {
+        width: 65%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .login-form {
+        width: 55%;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .login-form {
+        width: 50%;
+    }
+}
+

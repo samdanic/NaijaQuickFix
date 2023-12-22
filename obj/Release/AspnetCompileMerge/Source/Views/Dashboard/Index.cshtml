@@ -1,0 +1,84 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    @Html.Partial("../Partials/MetaPartial")
+    <title>Naija QuickFix Dashboard | An Online Platform For Connecting All Nigerians To various Artisans</title>
+</head>
+<body class="body">
+    @Html.Partial("../Partials/Loader")
+    @Html.Partial("../Partials/DashboardPartial")
+    <div class="admin-dashboard">
+        @Html.Partial("../Partials/DashboardNavPartial")
+        <div class="main-view">
+            <div class="main-container">
+                <div class="users">
+                    <div class="user-details">
+                        <span>Total Users: </span>
+                        <span class="total">@NaijaQuickFix.Helper.Helper.GetAllUsersNumber()</span>
+                    </div>
+                    <div class="user-details">
+                        <span>Newly added today: </span>
+                        <span class="total">0</span>
+                    </div>
+                    <div class="user-details">
+                        <span>Last Month:</span>
+                        <span class="total">0</span>
+                    </div>
+                    <canvas id="users" width="300"></canvas>
+                </div>
+                <div class="artisans">
+                    <div class="user-details">
+                        <span>Total Artisans: </span>
+                        <span class="total">@NaijaQuickFix.Helper.Helper.GetAllArtisansByNumber()</span>
+                    </div>
+                    <div class="user-details">
+                        <span>Newly added: </span>
+                        <span class="total">@NaijaQuickFix.Helper.Helper.GetArtisanRegisteredToday()</span>
+                    </div>
+                    <div class="user-details">
+                        <span>Last Month:</span>
+                        <span class="total">@NaijaQuickFix.Helper.Helper.GetArtisanRegisteredLastMonth()</span>
+                    </div>
+                    <canvas id="artisans" width="300"></canvas>
+                </div>
+                <div class="registered">
+                    <div class="user-details">
+                        <span>Total Registered:</span>
+                        <span class="total">@NaijaQuickFix.Helper.Helper.GetAllRegistered()</span>
+                    </div>
+                    <div class="user-details">
+                        <span>Newly added: </span>
+                        <span class="total">0</span>
+                    </div>
+                    <div class="user-details">
+                        <span>Last Month:</span>
+                        <span class="total">0</span>
+                    </div>
+                    <canvas id="registered" width="300"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/dashboard.js")
+    @Scripts.Render("~/Scripts/chart.js")
+<script>
+
+                window.addEventListener('load', (event) => {
+                    displayChart(@NaijaQuickFix.Helper.Helper.GetAllUsersNumber(), 0, 0, 'users', '')
+                    displayChart(@NaijaQuickFix.Helper.Helper.GetAllArtisansByNumber(), @NaijaQuickFix.Helper.Helper.GetArtisanRegisteredToday(), @NaijaQuickFix.Helper.Helper.GetAllArtisansByNumber(), 'artisans', 'line')
+                    displayChart(@NaijaQuickFix.Helper.Helper.GetAllRegistered(), 0, 0, 'registered', '')
+        });
+</script>
+</body>
+</html>

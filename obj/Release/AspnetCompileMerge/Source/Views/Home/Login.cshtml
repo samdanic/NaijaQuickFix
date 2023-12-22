@@ -1,0 +1,43 @@
+﻿@using NaijaQuickFix.ViewModels
+@model LoginViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    @Html.Partial("../Partials/MetaPartial")
+    <title>Login To Your Naija Quick Fix Account</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="spacer">
+        <a class="logoContainer current-page" page="home" href="../">
+            <img src="@Url.Content("~/Images/quickfixnewgreen.png")" class="green-logo" />
+        </a>
+        <div class="underline"></div>
+        <div class="form-container">
+            <form class="login-form" id="loginForm" method="POST" action="@Url.Action("Login","Home")" novalidate="novalidate">
+                <span style="color:red">@ViewBag.error</span>
+                <div class="input-div">
+                    <label>Email</label>
+                    <input placeholder="Email/Username" type="text" name="email" id="email" value="@Model.Email" class="input" />
+                    @Html.ValidationMessageFor(m => m.Email)
+                </div>
+                <div class="input-div">
+                    <label>Password</label>
+                    <input placeholder="Password" type="password" name="password" id="password" class="input" />
+                    @Html.ValidationMessageFor(m => m.Password)
+                </div>
+                <button class="login-btn">SUBMIT</button>
+            </form>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @*@RenderSection("scripts", required: false)*@
+</body>
+</html>

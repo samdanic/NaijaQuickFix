@@ -1,0 +1,97 @@
+﻿.artisan-image {
+}
+.search-grid {
+    width: 95vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+    grid-gap: 1em;
+    margin: 2.5em 0em;
+}
+.profession {
+    font-weight: 600 !important;
+    font-size: 28px !important;
+    line-height: 130% !important;
+    margin: .9em 0em;
+}
+
+.search-container {
+    border: .2px solid var(--muted);
+     padding: 1.5em 1em;
+    background-color: white;
+}
+.work-image {
+   background-color: aquamarine;
+   width: 100%;
+   height: 18em;
+}
+.work-description-image {
+    width: 100% !important;
+    height: 100%;
+}
+
+.artisan-name {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: .5em;
+}
+
+    .artisan-name img {
+        width: 30px;
+        height: 30px;
+    }
+
+.full-details {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+    .full-details span {
+        margin: 0px;
+        padding-top: -10px;
+        color: var(--theme-color);
+        font-family: var(--Poppins);
+        font-weight: 500;
+    }
+
+.job-description {
+    width: 95%;
+    font-size: 1.2em !important;
+    color: black !important;
+    font-family: var(--Montserrat);
+    font-weight: 400 !important;
+}
+
+.price-details {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 0;
+    padding: 0em 1em;
+    margin: 0;
+    border: none;
+    border-top: .2px solid var(--muted);
+}
+
+    .price-details h6 {
+        text-align: center;
+        color: var(--theme-color);
+        font-family: var(--Poppins);
+        font-weight: 500;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .price-details h5 {
+        text-align: center;
+        color: var(--theme-color);
+        font-family: var(--Poppins);
+        font-weight: 500;
+        font-size: 1.2em;
+        overflow: hidden;
+        cursor: pointer;
+    }

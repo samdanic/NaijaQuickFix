@@ -1,0 +1,38 @@
+﻿
+@Styles.Render("~/Content/header.css")
+@Styles.Render("~/Content/root.css")
+<div class="center">
+    <div class="header">
+        <a class="logoContainer current-page" page="home" href="./">
+            <img src="@Url.Content("~/Images/quickfixlogowhite1.png")" class="logo" />
+        </a>
+        <nav class="menu-container">
+            <ul>
+                <li>
+                    @Html.ActionLink("Home", "Index", "Home")
+                </li>
+                <li>
+                    @Html.ActionLink("About Us", "Index", "About")
+                </li>
+                <li>
+                    @Html.ActionLink("Contact Us", "Index", "Contact")
+                </li>
+                @if (NaijaQuickFix.Security.SimpleSessionPersister.IsAuthenticated)
+                {
+                    if (NaijaQuickFix.Security.SimpleSessionPersister.IsUser)
+                    {
+                        <li>
+                            @Html.ActionLink("Dashboard", "Index", "Dashboard")
+                        </li>
+                    }
+                }
+                    </ul>
+                
+        </nav>
+        <div class="navContainer">
+            <div class="harmburger"></div>
+            <div class="harmburger1"></div>
+            <div class="harmburger2"></div>
+        </div>
+    </div>
+</div>

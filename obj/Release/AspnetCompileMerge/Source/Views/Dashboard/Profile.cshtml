@@ -1,0 +1,93 @@
+﻿@using NaijaQuickFix.ViewModels
+@model ChangeProfileViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    @Html.Partial("../Partials/MetaPartial")
+    @Styles.Render("~/Content/profile.css")
+    @Styles.Render("~/Content/dashboard.css")
+    <title>Admin Profile | An Online Platform For Connecting All Nigerians To various Artisans</title>
+</head>
+
+<body>
+    @Html.Partial("../Partials/DashboardPartial")
+    <div class="overlay">
+        <div class="loader"></div>
+    </div>
+    <div class="admin-dashboard">
+        @Html.Partial("../Partials/DashboardNavPartial")
+        @if (NaijaQuickFix.Security.SimpleSessionPersister.IsAuthenticated)
+        {
+            if (NaijaQuickFix.Security.SimpleSessionPersister.IsAdmin)
+            {
+                <div class="main-view">
+                    <div style="display: flex; align-items: center; flex-direction: column;">
+                        <div class="profile">
+                            <div class="profile_details">
+                                <div class="profile_details-view">
+                                    <img src="@Url.Content("~/Images/default.png")" class="profile-img" />
+                                    <p class="profile-name">Admin Name</p>
+                                    <p class="profile-role">Admin</p>
+                                    <div class="edit_icon">
+                                        <img src="@Url.Content("~/Images/edit.png")" id="edit" />
+                                    </div>
+                                </div>
+                                <div class="contact-view">
+                                    <div class="contact-details">
+                                        <img src="@Url.Content("~/Images/email.png")" class="cnt-img" />
+                                        <div class="email-info">
+                                            <p class="admin_email">Email</p>
+                                            <p class="admin_email">@NaijaQuickFix.Security.SimpleSessionPersister.Account_Email</p>
+                                        </div>
+                                    </div>
+                                    <div class="contact-details">
+                                        <img src="@Url.Content("~/Images/phone.png")" class="cnt-img" />
+                                        <div class="email-info">
+                                            <p class="admin_email">Mobile</p>
+                                            <p class="admin_email">@NaijaQuickFix.Security.SimpleSessionPersister.Account_Phone</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="edit-view">
+                            <form class="edit-form" method="post" action="@Url.Action("Profile","Dashboard")">
+                                <input type="hidden" value="@NaijaQuickFix.Security.SimpleSessionPersister.Id" name="@Model.Account.Id"/>
+                                <input placeholder="Email" value="@NaijaQuickFix.Security.SimpleSessionPersister.Account_Email" readonly id="admin_firstname" name="Email" />
+                                <input placeholder="Phone No" value="@NaijaQuickFix.Security.SimpleSessionPersister.Account_Phone" readonly id="admin_lastname" name="Phone" />
+                                <input type="password" placeholder="Password" value="" name="Password" id="admin_mobile" />
+                                <input type="password" placeholder="ConfirmPassword" value="" name="ConfirmPassword" id="admin_mobile" />
+                                <div id="edit-admin">
+                                    <button type="submit" class="update-admin">UPDATE</button>
+                                </div>
+                            </form>
+                        </div>
+                       
+                    </div>
+                </div>
+            }
+        }
+            </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/dashboard.js")
+    <script type="text/javascript">
+        console.log('Profile page');
+        console.log($('.overlay'))
+        $(document).ready(async () => {
+            //$('.overlay').css('display', 'none');
+            //$('.overlay').css('display', 'flex');7
+            setTimeout(() => {
+                $('.overlay').css('display', 'none');
+            }, 3000)
+        })
+    </script>
+</body>
+</html>
+

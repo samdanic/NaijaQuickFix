@@ -1,0 +1,162 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    @Html.Partial("../Partials/MetaPartial")
+    <title>Naija QuickFix | An Online Platform For Connecting All Nigerians To various Artisans</title>
+    @Styles.Render("~/Content/home.css")
+    @Styles.Render("~/Content/search-result.css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @Html.Partial("../Partials/HeaderPartial")
+    @Html.Partial("../Partials/Loader")
+    <form method="post">
+        <div class="search-area">
+            <div class="logo-view">
+                <h1>
+                    <a class="quick-fix-font">
+                        <span>Naija</span>
+                        Quick
+                        <span style="color: #33A175">Fix</span>
+                    </a>
+                </h1>
+                @*<h1>NaijaQuickFix</h1>*@
+            </div>
+            <div class="search-view">
+                <div class="search-view-input">
+                    <input placeholder="Profession Search" name="q" value="" type="text" />
+                    <input placeholder="Location" name="m" Location" value="" type="text" />
+                </div>
+                <div class="search-view-button">
+                    <button type="submit" class="btn-search" id="searchBTN">Search</button>
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+
+    @Html.Partial("../Partials/RegisterNavPartial")
+    <div class="steps" id="sym-result">
+
+    </div>
+    <div class="home-view">
+        <div class="slider-outer">
+            <div class="slider-icon">
+                <img src="@Url.Content("~/Images/previous.png")" class="prev" alt="prev" />
+                <img src="@Url.Content("~/Images/next.png")" class="next" alt="next" />
+            </div>
+            <div class="slider-inner">
+                <img src="@Url.Content("~/Images/b1.jpg")" class="active first" />
+                <img src="@Url.Content("~/Images/b2.jpg")" />
+                <img src="@Url.Content("~/Images/b2.png")" />
+                <img src="@Url.Content("~/Images/b4.png")" />
+                <img src="@Url.Content("~/Images/b3.jpg")" class="last" />
+            </div>
+        </div>
+    </div>
+    <div>
+
+        <div class="categories">
+            <h3 class="category-text">Get Trusted Experts For Your Quick Job</h3>
+            <div class="category-view">
+                @* Pick the category class only *@
+                <div class="category">
+                    <img src="@Url.Content("~/Images/category.png")" />
+                    <span>Engineers</span>
+                </div>
+                <div class="category">
+                    <img src="@Url.Content("~/Images/category.png")" />
+                    <span>Fashion Designers</span>
+                </div>
+                <div class="category">
+                    <div>
+                        <img src="@Url.Content("~/Images/category.png")" />
+                    </div>
+                    <span>Bricklayers</span>
+                </div>
+                <div class="category">
+                    <img src="@Url.Content("~/Images/category.png")" />
+                    <span>Tutors</span>
+                </div>
+            </div>
+            <div class="btn-view">
+                <button class="category-btn">View All Categories</button>
+            </div>
+        </div>
+    </div>
+    <div class="information">
+        <h2>How To Register As An Artisan</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="circle">
+                    <span>1</span>
+                </div>
+                <h2>Get registration form at any of our offices, branch or your association office.</h2>
+            </div>
+            <div class="step">
+                <div class="circle">
+                    <span>2</span>
+                </div>
+                <h2>Fill the form, append your signature, and submit it to us.</h2>
+            </div>
+            <div class="step">
+                <div class="circle">
+                    <span>3</span>
+                </div>
+                <h2>Our staff will go through you application and register you on the platform.</h2>
+            </div>
+            <div class="step">
+                <div class="circle">
+                    <span>4</span>
+                </div>
+                <h2>You will be connected to the world in few seconds</h2>
+            </div>
+        </div>
+    </div>
+
+
+    <!--PARTIAl-->
+    @* Footer *@
+    @Html.Partial("../Partials/Footer")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/home.js")
+    @Scripts.Render("~/Scripts/header.js")
+    @*@Scripts.Render("~/Scripts/search.js")*@
+    @Scripts.Render("~/Scripts/Global/search.js")
+
+    @*<script>
+            $(document).on("ready", function () {
+                $(".btn-search").on("click", function (e) {
+                    e.preventDefault();
+                    $.ajax({
+                        type: "POST",
+                        url: "/Home/Search",
+                        content: "application/json;charset=utf-8",
+                        dataType: "json",
+                        data: $(this.form).serialize(),
+                        success: function (d) {
+                            if (d.success) {
+                                $('.sym-res').html(d.content);
+                                console.log("done");
+                            }
+                            else {
+                                $('#myError').modal('toggle');
+                                console.log("not");
+                            }
+                        }
+                    });
+                })
+            })
+        </script>*@
+    @Html.Partial("../Partials/ChatPartials")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    @Html.Partial("../Partials/MetaPartial")
+    <title>Naija QuickFix Dashboard | An Online Platform For Connecting All Nigerians To various Artisans</title>
+</head>
+<body class="body">
+    @Html.Partial("../Partials/DashboardPartial")
+    <div class="admin-dashboard">
+        @Html.Partial("../Partials/DashboardNavPartial")
+        <div class="main-view">
+            <div class="main-container">
+                <h1>Complaints</h1>
+           </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/dashboard.js")
+</body>
+</html>
